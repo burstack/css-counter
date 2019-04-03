@@ -1,0 +1,169 @@
+
+.intro {
+  margin-top: 5%;
+  text-align: center;
+  color: #265342;
+}
+
+.frame {
+  position: absolute;
+  top: 40%;
+  left: 46%;
+  width: 540px;
+  height: 300px;
+  margin-top: -100px;
+  margin-left: -200px;
+  border-radius: 5px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #3d846a;
+  color: #265342;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.center .counter {
+  background: #fff;
+  border-radius: 4px;
+  padding: 10px 10px 20px;
+  position: relative;
+  left: -.5%;
+  height: 10px;
+  overflow: hidden;
+}
+.center .counter > span {
+  position: relative;
+  font-size: 22px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+  font-weight: 700;
+  color: #0e6197;
+}
+.center .counter > span.ones {
+  animation: count 10s steps(1) infinite;
+}
+.center .counter > span.tens {
+  animation: count 100s steps(1) infinite;
+}
+.center .counter > span.hundreds {
+  animation: count 1000s steps(1) infinite;
+}
+.center .counter > span.thousands {
+  animation: count 10000s steps(1) infinite;
+}
+.center .counter > span span {
+  float: left;
+  height: 50px;
+}
+.center .icon {
+  position: absolute;
+  width: 16px;
+  height: 20px;
+  top: 240px;
+  left: 49%;
+  cursor: pointer;
+}
+.center .icon .pause {
+  position: absolute;
+  width: 16px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.center .icon .pause::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 5px;
+  height: 20px;
+  top: 0;
+  left: 10px;
+  background: #fff;
+}
+.center .icon .pause::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 5px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background: #fff;
+}
+.center .icon .play {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #fff;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+}
+.center input {
+  opacity: 0;
+}
+.center input:checked ~ .counter span {
+  animation-play-state: paused;
+}
+.center input:checked ~ .icon .pause {
+  opacity: 0;
+  transform: scale(0);
+}
+.center input:checked ~ .icon .play {
+  opacity: 1;
+  transform: scale(1);
+}
+@keyframes count {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: -50px;
+  }
+  20% {
+    top: -100px;
+  }
+  30% {
+    top: -150px;
+  }
+  40% {
+    top: -200px;
+  }
+  50% {
+    top: -250px;
+  }
+  60% {
+    top: -300px;
+  }
+  70% {
+    top: -350px;
+  }
+  80% {
+    top: -400px;
+  }
+  90% {
+    top: -450px;
+  }
+  100% {
+    top: -500px;
+  }
+}
